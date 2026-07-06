@@ -9,67 +9,40 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
         body { font-family: 'Inter', system-ui, sans-serif; }
         .heading { font-family: 'Playfair Display', sans-serif; }
-        .hero { background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('IMG_1138.jpg'); background-size: cover; background-position: center; height: 100vh; }
     </style>
 </head>
 <body class="bg-zinc-950 text-white">
     <nav class="fixed w-full bg-black/95 backdrop-blur z-50 border-b border-white/10">
         <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
             <img src="acplogo.jpeg" alt="ACP Logo" class="h-12">
-            <div class="flex gap-10 text-sm font-medium">
-                <a href="#about" class="hover:text-amber-400">ABOUT</a>
-                <a href="#investments" class="hover:text-amber-400">INVESTMENTS</a>
-                <a href="#team" class="hover:text-amber-400">TEAM</a>
-                <a href="#contact" class="hover:text-amber-400">CONTACT</a>
+            <div class="flex gap-8 text-sm font-medium">
+                <a href="index.html" class="hover:text-amber-400">HOME</a>
+                <a href="investments.html" class="hover:text-amber-400">INVESTMENTS</a>
+                <a href="team.html" class="hover:text-amber-400">TEAM</a>
+                <a href="contact.html" class="hover:text-amber-400">CONTACT</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero flex items-center">
+    <header class="h-screen bg-cover bg-center flex items-center" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('IMG_1138.jpg');">
         <div class="max-w-6xl mx-auto px-8 text-center pt-20">
             <h1 class="heading text-7xl font-bold leading-none mb-6">INVESTING IN FUTURE OF<br>INNOVATION</h1>
             <p class="text-2xl text-amber-300">Empowering growth in energy, technology, and healthcare sectors.</p>
         </div>
     </header>
 
-    <section id="investments" class="py-20 bg-zinc-900">
-        <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-3 gap-8">
-            <div class="bg-zinc-800 p-8 rounded-3xl">
-                <h3 class="text-3xl font-semibold mb-6">Energy Solutions</h3>
-                <p>We invest in transformative technologies that advance sustainable energy production and efficiency. Our focus drives long-term environmental and economic impact.</p>
+    <!-- About Content from screenshots -->
+    <section class="py-24 bg-black">
+        <div class="max-w-7xl mx-auto px-8">
+            <h2 class="heading text-6xl font-bold text-center mb-16">About Adobe Capital Partners</h2>
+            <div class="prose prose-invert max-w-4xl mx-auto text-lg leading-relaxed">
+                <p>Adobe Capital Partners was founded in 2025. ACP is a family office based in Phoenix, Arizona.</p>
+                <p>At the heart of our mission is a deep commitment to conducting business with an integrity, excellence, and thoroughness...</p>
+                <!-- Add more text from your screenshots here as needed -->
             </div>
-            <div class="bg-zinc-800 p-8 rounded-3xl">
-                <h3 class="text-3xl font-semibold mb-6">Real Estate</h3>
-                <p>We back transformative solutions that improve patient outcomes and healthcare delivery. Our investments accelerate advancements in medical technology and accessibility.</p>
+            <div class="text-center mt-12">
+                <a href="team.html" class="inline-block bg-amber-400 text-black px-8 py-4 rounded-full font-medium">Meet Our Team →</a>
             </div>
-            <div class="bg-zinc-800 p-8 rounded-3xl">
-                <h3 class="text-3xl font-semibold mb-6">Military Technology</h3>
-                <p>We support cutting-edge innovations that enhance national security and defense capabilities. Our Portfolio targets high-impact technologies and accessibility.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="team" class="py-24 bg-zinc-900">
-        <div class="max-w-7xl mx-auto px-8 text-center">
-            <h2 class="heading text-6xl font-bold mb-6">Our team</h2>
-            <div class="grid md:grid-cols-4 gap-10">
-                <div class="text-center"><img src="bob.png" class="rounded-2xl mx-auto mb-4 w-48 h-48 object-cover"><p class="font-medium">Robert (Bob) Smith<br><span class="text-amber-400 text-sm">Founder / Principal</span></p></div>
-                <div class="text-center"><img src="rich.png" class="rounded-2xl mx-auto mb-4 w-48 h-48 object-cover"><p class="font-medium">Rich Smith<br><span class="text-amber-400 text-sm">Principal</span></p></div>
-                <div class="text-center"><img src="preston.jpeg" class="rounded-2xl mx-auto mb-4 w-48 h-48 object-cover"><p class="font-medium">Preston Smith<br><span class="text-amber-400 text-sm">Chief Investment Officer</span></p></div>
-                <div class="text-center"><img src="robin.jpeg" class="rounded-2xl mx-auto mb-4 w-48 h-48 object-cover"><p class="font-medium">Robin Bloomfield<br><span class="text-amber-400 text-sm">Director of Operations</span></p></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-24 bg-black">
-        <div class="max-w-xl mx-auto px-8 text-center">
-            <h2 class="heading text-6xl font-bold mb-8">Contact us</h2>
-            <form class="space-y-6">
-                <input type="text" placeholder="Name" class="w-full bg-zinc-900 border border-white/30 rounded-2xl px-6 py-4">
-                <input type="email" placeholder="Email" class="w-full bg-zinc-900 border border-white/30 rounded-2xl px-6 py-4">
-                <textarea placeholder="Message" rows="5" class="w-full bg-zinc-900 border border-white/30 rounded-2xl px-6 py-4"></textarea>
-                <button type="submit" class="w-full bg-white text-black py-4 rounded-full font-semibold">Submit</button>
-            </form>
         </div>
     </section>
 
