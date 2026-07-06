@@ -9,6 +9,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
         body { font-family: 'Inter', system-ui, sans-serif; }
         .heading { font-family: 'Playfair Display', sans-serif; }
+        .hero { background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('IMG_1138.jpg'); background-size: cover; background-position: center; height: 100vh; }
     </style>
 </head>
 <body class="bg-zinc-950 text-white">
@@ -17,24 +18,43 @@
             <img src="acplogo.jpeg" alt="ACP Logo" class="h-12">
             <div class="flex gap-8 text-sm font-medium">
                 <a href="index.html" class="hover:text-amber-400">HOME</a>
-                <a href="investments.html" class="hover:text-amber-400">INVESTMENTS</a>
-                <a href="team.html" class="hover:text-amber-400">TEAM</a>
-                <a href="contact.html" class="hover:text-amber-400">CONTACT</a>
+                <a href="about.html" class="hover:text-amber-400">ABOUT</a>
+                <a href="team.html" class="hover:text-amber-400">OUR TEAM</a>
+                <a href="contact.html" class="hover:text-amber-400">CONTACT US</a>
             </div>
         </div>
     </nav>
 
-    <header class="h-screen bg-cover bg-center flex items-center" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('IMG_1138.jpg');">
+    <header class="hero flex items-center">
         <div class="max-w-6xl mx-auto px-8 text-center pt-20">
             <h1 class="heading text-7xl font-bold leading-none mb-6">INVESTING IN FUTURE OF<br>INNOVATION</h1>
             <p class="text-2xl text-amber-300">Empowering growth in energy, technology, and healthcare sectors.</p>
         </div>
     </header>
 
-    <!-- About Content from screenshots -->
-    <section class="py-24 bg-black">
-        <div class="max-w-7xl mx-auto px-8">
-            <h2 class="heading text-6xl font-bold text-center mb-16">About Adobe Capital Partners</h2>
+    <!-- Quick Investment Highlights -->
+    <section class="py-20 bg-zinc-900">
+        <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-3 gap-8">
+            <div class="bg-zinc-800 p-8 rounded-3xl">
+                <h3 class="text-3xl font-semibold mb-6">Energy Solutions</h3>
+                <p>We invest in transformative technologies that advance sustainable energy production and efficiency...</p>
+            </div>
+            <div class="bg-zinc-800 p-8 rounded-3xl">
+                <h3 class="text-3xl font-semibold mb-6">Real Estate</h3>
+                <p>We back transformative solutions that improve patient outcomes and healthcare delivery...</p>
+            </div>
+            <div class="bg-zinc-800 p-8 rounded-3xl">
+                <h3 class="text-3xl font-semibold mb-6">Military Technology</h3>
+                <p>We support cutting-edge innovations that enhance national security...</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-sm border-t border-white/10 bg-black">
+        Adobe Capital Partners • Phoenix, AZ • robin@adobecapitalpartners.com
+    </footer>
+</body>
+</html>            <h2 class="heading text-6xl font-bold text-center mb-16">About Adobe Capital Partners</h2>
             <div class="prose prose-invert max-w-4xl mx-auto text-lg leading-relaxed">
                 <p>Adobe Capital Partners was founded in 2025. ACP is a family office based in Phoenix, Arizona.</p>
                 <p>At the heart of our mission is a deep commitment to conducting business with an integrity, excellence, and thoroughness...</p>
