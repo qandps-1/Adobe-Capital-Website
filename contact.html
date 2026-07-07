@@ -14,7 +14,7 @@
 <body class="bg-zinc-950 text-white">
     <nav class="fixed w-full bg-black/95 backdrop-blur z-50 border-b border-white/10">
         <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
-            <img src="acplogo.jpeg" alt="ACP Logo" class="h-36">
+            <a href="index.html"><img src="acplogo.jpeg" alt="ACP Logo" class="h-36"></a>
             <div class="flex gap-8 text-sm font-medium">
                 <a href="index.html" class="hover:text-amber-400">HOME</a>
                 <a href="about.html" class="hover:text-amber-400">ABOUT</a>
@@ -24,17 +24,73 @@
         </div>
     </nav>
 
-    <div class="pt-32 max-w-2xl mx-auto px-8 py-20 text-center">
+    <div class="pt-48 max-w-2xl mx-auto px-8 py-20 text-center">
         <h1 class="heading text-6xl font-bold mb-8">Contact Us</h1>
         <p class="text-xl text-zinc-400 mb-12">Feel free to contact us with any questions or concerns. You can use the form below or email us directly.</p>
 
-        <form class="space-y-6">
-            <input type="text" placeholder="Your Name" class="w-full bg-zinc-900 border border-white/30 rounded-2xl px-6 py-4 text-white">
-            <input type="email" placeholder="Your Email" class="w-full bg-zinc-900 border border-white/30 rounded-2xl px-6 py-4 text-white">
-            <textarea placeholder="Your Message" rows="6" class="w-full bg-zinc-900 border border-white/30 rounded-2xl px-6 py-4 text-white"></textarea>
-            <button type="submit" class="w-full bg-amber-400 hover:bg-white text-black font-semibold py-4 rounded-full text-lg">Send Message</button>
+        <!--
+          FORMSPREE SETUP — do this before the form will send email:
+          1. Go to formspree.io and sign in with robin@adobecapitalpartners.com
+             (or whichever inbox should receive these — do NOT reuse Eagle
+             Trident's form ID, ACP needs its own).
+          2. Create a new form there. It will give you an ID like "xyzabc12".
+          3. Replace REPLACE_WITH_ACP_FORM_ID below with that ID.
+        -->
+        <form id="contactForm" action="https://formspree.io/f/REPLACE_WITH_ACP_FORM_ID" method="POST" class="space-y-6 text-left" onsubmit="handleSubmit(event)">
+            <input type="text" name="name" placeholder="Your Name" required
+                class="w-full bg-zinc-900 border border-white/30 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-amber-400">
+            <input type="email" name="email" placeholder="Your Email" required
+                class="w-full bg-zinc-900 border border-white/30 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-amber-400">
+            <textarea name="message" placeholder="Your Message" rows="6" required
+                class="w-full bg-zinc-900 border border-white/30 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-amber-400"></textarea>
+            <button type="submit" id="submitBtn"
+                class="w-full bg-amber-400 hover:bg-white text-black font-semibold py-4 rounded-full text-lg transition">
+                Send Message
+            </button>
+            <p id="formMsg" class="hidden text-sm pt-2 text-center" style="color:#2D9D6F;">Message sent! We will be in touch soon.</p>
+            <p id="formErr" class="hidden text-red-400 text-sm pt-2 text-center">Something went wrong. Please try again or email us directly.</p>
         </form>
 
+        <p class="mt-12 text-zinc-400">Phoenix, AZ • robin@adobecapitalpartners.com</p>
+    </div>
+
+    <footer class="py-12 text-center text-sm border-t border-white/10 bg-black">
+        Adobe Capital Partners • Phoenix, AZ • <a href="contact.html" class="hover:text-amber-400">Contact Us</a>
+    </footer>
+
+    <script>
+        async function handleSubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            const msg = document.getElementById('formMsg');
+            const err = document.getElementById('formErr');
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            try {
+                const res = await fetch(e.target.action, {
+                    method: 'POST',
+                    body: new FormData(e.target),
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (res.ok) {
+                    msg.classList.remove('hidden');
+                    err.classList.add('hidden');
+                    e.target.reset();
+                } else {
+                    throw new Error('Failed');
+                }
+            } catch {
+                err.classList.remove('hidden');
+                msg.classList.add('hidden');
+            } finally {
+                btn.textContent = 'Send Message';
+                btn.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>
         <p class="mt-12 text-zinc-400">Phoenix, AZ • robin@adobecapitalpartners.com</p>
     </div>
 
