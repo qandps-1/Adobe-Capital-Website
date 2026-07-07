@@ -9,13 +9,50 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
         body { font-family: 'Inter', system-ui, sans-serif; }
         .heading { font-family: 'Playfair Display', sans-serif; }
-        .hero { background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('IMG_1138.jpg'); background-size: cover; background-position: center; height: 100vh; }
+
+        /*
+          IMAGE FILES NEEDED — add these to the repo's /images folder
+          (or root, matching however team.html references acplogo.jpeg).
+          Until real photos are added, each spot below shows a plain
+          dark placeholder so nothing looks "broken."
+
+          images/hero-quarry.jpg        -> mining/quarry photo (hero background)
+          images/mineral-ore.jpg        -> raw mineral/ore close-up
+          images/defense-tech.jpg       -> dual-use defense tech (drone/robotics)
+          images/energy-infra.jpg       -> energy infrastructure / grid
+          images/advanced-computing.jpg -> chip/circuit board
+          images/postwar.jpg            -> infrastructure/reconstruction/smart city
+          images/healthcare.jpg         -> healthcare/medtech
+          images/real-estate.jpg        -> multifamily or commercial property
+          images/watch.jpg              -> wearable tech (About section, right column)
+          images/closing-building.jpg   -> green apartment building (closing banner)
+        */
+        .img-placeholder {
+            background: linear-gradient(135deg, #18181b 0%, #09090b 100%);
+        }
+        .card {
+            background-color: #18181b;
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: border-color 0.2s ease;
+        }
+        .card:hover {
+            border-color: #146C43;
+        }
+        .card-image {
+            height: 12rem;
+            background-size: cover;
+            background-position: center;
+        }
     </style>
 </head>
 <body class="bg-zinc-950 text-white">
+
+    <!-- NAV — matches team.html / about.html / contact.html exactly -->
     <nav class="fixed w-full bg-black/95 backdrop-blur z-50 border-b border-white/10">
         <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
-            <img src="acplogo.jpeg" alt="ACP Logo" class="h-12">
+            <a href="index.html">
+                <img src="acplogo.jpeg" alt="ACP Logo" class="h-36">
+            </a>
             <div class="flex gap-8 text-sm font-medium">
                 <a href="index.html" class="hover:text-amber-400">HOME</a>
                 <a href="about.html" class="hover:text-amber-400">ABOUT</a>
@@ -25,129 +62,155 @@
         </div>
     </nav>
 
-    <!-- Hero -->
-    <header class="hero flex items-center">
-        <div class="max-w-6xl mx-auto px-8 text-center pt-20">
-            <h1 class="heading text-7xl font-bold leading-none mb-6">INVESTING IN FUTURE OF<br>INNOVATION</h1>
-            <p class="text-2xl text-amber-300">Empowering growth in energy, technology, and healthcare sectors.</p>
-        </div>
-    </header>
-
-    <!-- Investment Portfolio Cards -->
-    <section class="py-20 bg-zinc-900">
-        <div class="max-w-7xl mx-auto px-8">
-            <h2 class="heading text-5xl font-bold text-center mb-12">Investment Portfolio</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-zinc-800 p-8 rounded-3xl">
-                    <h3 class="text-3xl font-semibold mb-6">Energy Investments</h3>
-                    <p>Focusing on innovative energy solutions to solve growing power demands and future energy needs.</p>
-                </div>
-                <div class="bg-zinc-800 p-8 rounded-3xl">
-                    <h3 class="text-3xl font-semibold mb-6">FinTech and Crypto</h3>
-                    <p>Supporting cutting-edge technology startups that drive innovation and growth in the industry.</p>
-                </div>
-                <div class="bg-zinc-800 p-8 rounded-3xl">
-                    <h3 class="text-3xl font-semibold mb-6">Healthcare Innovation</h3>
-                    <p>Investing in healthcare advancements to improve lives and enhance medical technology and longevity.</p>
-                </div>
-            </div>
+    <!-- SECTION 1A — HERO -->
+    <section class="pt-48 pb-24 px-8 img-placeholder relative" style="background-image: url('images/hero-quarry.jpg'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/50 to-black/90"></div>
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <h1 class="heading text-5xl md:text-7xl font-bold leading-tight mb-8">
+                Investing in Future of Innovation
+            </h1>
+            <p class="text-sm md:text-base tracking-[0.3em] uppercase font-semibold" style="color:#2D9D6F;">
+                Investment Focus
+            </p>
         </div>
     </section>
 
-    <!-- Transformative Investments -->
-    <section class="py-24 bg-black">
-        <div class="max-w-7xl mx-auto px-8">
-            <h2 class="heading text-6xl font-bold text-center mb-16">Transformative Investments</h2>
-            <p class="text-center text-xl max-w-3xl mx-auto mb-16">At Adobe Capital Partners we not only invest in things that are lucrative, but we also invest in things that advance the world in ways we have never seen before.</p>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div>
-                    <img src="IMG_1143.jpeg" alt="Post Regime" class="rounded-3xl w-full mb-6">
-                    <h3 class="text-3xl font-semibold">Post Regime and Infrastructure Reconstruction</h3>
-                    <p>We invest in the rebuilding and modernization of infrastructure in post-regime environments through sustainable smart cities that prioritize resilience and long term viability.</p>
-                </div>
-                <div>
-                    <img src="IMG_1144.jpeg" alt="Advanced Computing" class="rounded-3xl w-full mb-6">
-                    <h3 class="text-3xl font-semibold">Advanced Computing</h3>
-                    <p>We invest in cutting-edge advanced computing technologies that drive breakthroughs in performance, efficiency and scalability.</p>
+    <!-- SECTION 1B — 3 FLAGSHIP CARDS -->
+    <section class="bg-zinc-950 px-8 pb-24">
+        <div class="max-w-6xl mx-auto flex flex-wrap justify-center gap-8">
+
+            <div class="card rounded-2xl overflow-hidden w-full sm:w-[45%] lg:w-[30%]">
+                <div class="card-image img-placeholder" style="background-image: url('images/mineral-ore.jpg');"></div>
+                <div class="p-6">
+                    <h3 class="heading text-xl font-semibold text-amber-400 mb-3">Minerals &amp; Mining</h3>
+                    <p class="text-zinc-300 text-sm leading-relaxed">Adobe Capital Partners secures access to critical minerals as a cornerstone of national security, technological leadership, and economic resilience in the 21st century. We invest in mining, processing, and supply chain ventures spanning chrome, gold, and nickel, targeting jurisdictions where geopolitical shifts are creating new opportunity. As diligent stewards of the resources entrusted to us, we pursue mineral investments that strengthen supply security while generating meaningful, lasting returns.</p>
                 </div>
             </div>
+
+            <div class="card rounded-2xl overflow-hidden w-full sm:w-[45%] lg:w-[30%]">
+                <div class="card-image img-placeholder" style="background-image: url('images/defense-tech.jpg');"></div>
+                <div class="p-6">
+                    <h3 class="heading text-xl font-semibold text-amber-400 mb-3">Dual Use Defense Tech</h3>
+                    <p class="text-zinc-300 text-sm leading-relaxed">Maintaining technological superiority is essential for deterrence and economic competitiveness. We invest in dual-use defense technologies — autonomous systems, advanced sensing, and secure infrastructure — where the convergence of commercial innovation and national security needs creates ventures that can scale rapidly while addressing urgent capability gaps for the U.S. and its allies. These are investments we're proud to stand behind, built to serve both purpose and return.</p>
+                </div>
+            </div>
+
+            <div class="card rounded-2xl overflow-hidden w-full sm:w-[45%] lg:w-[30%]">
+                <div class="card-image img-placeholder" style="background-image: url('images/energy-infra.jpg');"></div>
+                <div class="p-6">
+                    <h3 class="heading text-xl font-semibold text-amber-400 mb-3">Energy &amp; Energy Infrastructure</h3>
+                    <p class="text-zinc-300 text-sm leading-relaxed">Reliable, resilient energy systems underpin modern economies and national security alike. We invest across the spectrum — energy production, transmission, grid modernization, and the infrastructure that supports long-term resilience — favoring pragmatic, dependable solutions over speculative bets. This sector reflects our broader philosophy: durable value, generously deployed, built to outlast us.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="py-24 bg-zinc-900">
-        <div class="max-w-7xl mx-auto px-8">
-            <h2 class="heading text-6xl font-bold text-center mb-16">About Adobe Capital Partners</h2>
+    <!-- SECTION 2 — ABOUT ADOBE CAPITAL PARTNERS -->
+    <section class="bg-zinc-900 px-8 py-24">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="heading text-4xl md:text-5xl font-bold text-center mb-16">About Adobe Capital Partners</h2>
+
             <div class="grid md:grid-cols-2 gap-16">
                 <div>
-                    <h3 class="text-3xl font-semibold mb-8">Our Investment Philosophy</h3>
-                    <p class="text-lg leading-relaxed">Adobe Capital Partners was founded in 2025. ACP is a family office based in Phoenix, Arizona. At the heart of our mission is a deep commitment to conducting business with an integrity, excellence, and thoroughness, all while conducting our affairs in a manner that reflects our biblical worldview and commitment to serving a higher calling.</p>
+                    <h3 class="heading text-2xl font-semibold mb-6" style="color:#2D9D6F;">Our Investment Philosophy</h3>
+                    <p class="text-zinc-300 leading-relaxed mb-6">Adobe Capital Partners was founded in 2025. ACP is a family office based in Phoenix, Arizona.</p>
+                    <p class="text-zinc-300 leading-relaxed mb-6">At the heart of our mission is a deep commitment to conducting business with integrity, excellence, and thoroughness, all while conducting our affairs in a manner that reflects our biblical worldview and commitment to serving a higher calling. As diligent stewards of the resources entrusted to us — finances, property, time, relationships — we aim to generate meaningful returns and generously deploy our earnings towards initiatives that create lasting, positive impact in the world rather than accumulating wealth.</p>
+                    <p class="text-zinc-300 leading-relaxed mb-6">We believe our investments should strengthen the communities where we do business, not just our own returns. Wherever we invest — whether in a mining operation, a growing company, or a piece of real estate — we look for opportunities to give back locally: supporting jobs, local partners, and initiatives that help those communities thrive alongside us.</p>
+                    <p class="text-zinc-300 leading-relaxed">Every investment we pursue is carefully evaluated to ensure it aligns with trusted partners, delivers strong financial potential, leverages our unique skills, brings genuine joy, and opens doors for purposeful influence. We intentionally prioritize a well-rounded life, dedicating equal focus to personal and spiritual growth, strategic investing, and transformative outreach — while weaving in fun, meaningful experiences and shared journeys along the way.</p>
                 </div>
+
                 <div>
-                    <img src="IMG_1142.jpeg" alt="Philosophy" class="rounded-3xl w-full">
+                    <h3 class="heading text-2xl font-semibold mb-6" style="color:#2D9D6F;">Diverse Industry</h3>
+                    <p class="text-zinc-300 leading-relaxed mb-8">Adobe Capital Partners invests in a diverse range of high-profile industries, reflecting our commitment to innovation and transformative potential. Our portfolio spans energy startups advancing sustainable solutions, pioneering developments in aerospace, cutting-edge sports wearables that enhance performance and wellness, advanced computing, artificial intelligence, healthcare innovations, and other promising sectors. This broad approach allows us to capture cross-industry synergies, drive meaningful progress, and deliver strong value to stakeholders and the global economy.</p>
+                    <div class="card-image img-placeholder rounded-2xl" style="height: 16rem; background-image: url('images/watch.jpg');"></div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- SECTION 3 — TRANSFORMATIVE INVESTMENT PORTFOLIO (7 cards) -->
+    <section class="bg-zinc-950 px-8 py-24">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="heading text-4xl md:text-5xl font-bold text-center mb-6">Transformative Investment Portfolio</h2>
+            <p class="text-zinc-300 text-center max-w-3xl mx-auto mb-16 leading-relaxed">At Adobe Capital Partners we not only invest in things that are lucrative, but we also invest in things that advance the world in ways we have never seen before.</p>
+
+            <div class="flex flex-wrap justify-center gap-8">
+
+                <div class="card rounded-2xl overflow-hidden w-full sm:w-[45%] lg:w-[30%]">
+                    <div class="card-image img-placeholder" style="background-image: url('images/mineral-ore.jpg');"></div>
+                    <div class="p-6">
+                        <h3 class="heading text-lg font-semibold text-amber-400 mb-3">Minerals &amp; Mining</h3>
+                        <p class="text-zinc-300 text-sm leading-relaxed">We invest in mineral mining operations — from extraction to processing — that advance the technological and industrial capabilities critical to national security and economic resilience. Our current work spans chrome, gold, and nickel opportunities in emerging jurisdictions, where geopolitical realignment is creating meaningful opportunity for disciplined capital.</p>
+                    </div>
+                </div>
+
+                <div class="card rounded-2xl overflow-hidden w-full sm:w-[45%] lg:w-[30%]">
+                    <div class="card-image img-placeholder" style="background-image: url('images/defense-tech.jpg');"></div>
+                    <div class="p-6">
+                        <h3 class="heading text-lg font-semibold text-amber-400 mb-3">Dual Use Defense Tech</h3>
+                        <p class="text-zinc-300 text-sm leading-relaxed">We invest in dual-use defense technologies — autonomous systems, advanced sensing, and secure infrastructure — that serve both national security and commercial markets. These ventures sit at the convergence of innovation and capability gap, built to scale quickly while delivering lasting value to the partners and allies who depend on them.</p>
+                    </div>
+                </div>
+
+                <div class="card rounded-2xl overflow-hidden w-full sm:w-[45%] lg:w-[30%]">
+                    <div class="card-image img-placeholder" style="background-image: url('images/energy-infra.jpg');"></div>
+                    <div class="p-6">
+                        <h3 class="heading text-lg font-semibold text-amber-400 mb-3">Energy &amp; Energy Infrastructure</h3>
+                        <p class="text-zinc-300 text-sm leading-relaxed">We invest in energy production, transmission, and infrastructure modernization, as well as the technologies and innovations driving the next generation of energy solutions. These are the durable, reliable systems that underpin economic resilience. We favor pragmatic solutions over speculative ones, targeting projects that pair strong financial return with genuine, long-term contribution to energy security.</p>
+                    </div>
+                </div>
+
+                <div class="card rounded-2xl overflow-hidden w-full sm:w-[45%] lg:w-[30%]">
+                    <div class="card-image img-placeholder" style="background-image: url('images/advanced-computing.jpg');"></div>
+                    <div class="p-6">
+                        <h3 class="heading text-lg font-semibold text-amber-400 mb-3">Advanced Computing</h3>
+                        <p class="text-zinc-300 text-sm leading-relaxed">We invest in cutting-edge computing technologies that drive breakthroughs in performance, efficiency, and scalability — the infrastructure layer beneath the innovations reshaping every other sector we invest in, from defense to energy.</p>
+                    </div>
+                </div>
+
+                <div class="card rounded-2xl overflow-hidden w-full sm:w-[45%] lg:w-[30%]">
+                    <div class="card-image img-placeholder" style="background-image: url('images/postwar.jpg');"></div>
+                    <div class="p-6">
+                        <h3 class="heading text-lg font-semibold text-amber-400 mb-3">Post War and Post Regime Reconstruction</h3>
+                        <p class="text-zinc-300 text-sm leading-relaxed">We invest in the rebuilding and modernization of infrastructure in post-war and post-regime environments, backing sustainable smart cities that prioritize resilience and long-term viability. These are difficult environments that reward patient, disciplined capital willing to build for the long term.</p>
+                    </div>
+                </div>
+
+                <div class="card rounded-2xl overflow-hidden w-full sm:w-[45%] lg:w-[30%]">
+                    <div class="card-image img-placeholder" style="background-image: url('images/healthcare.jpg');"></div>
+                    <div class="p-6">
+                        <h3 class="heading text-lg font-semibold text-amber-400 mb-3">Healthcare Innovation</h3>
+                        <p class="text-zinc-300 text-sm leading-relaxed">We invest in healthcare advancements that improve lives and extend healthy years — medical technology, diagnostics, and longevity science that reflect our commitment to human flourishing, not just financial return.</p>
+                    </div>
+                </div>
+
+                <div class="card rounded-2xl overflow-hidden w-full sm:w-[45%] lg:w-[30%]">
+                    <div class="card-image img-placeholder" style="background-image: url('images/real-estate.jpg');"></div>
+                    <div class="p-6">
+                        <h3 class="heading text-lg font-semibold text-amber-400 mb-3">Real Estate</h3>
+                        <p class="text-zinc-300 text-sm leading-relaxed">We invest across a diverse range of real estate — multifamily housing, industrial properties, progressive adult living communities, and select agricultural and commercial holdings. Each investment in this category aligns with trusted partners, delivers durable value, and is an income-focused investment that is non-correlative to the general markets, fitting within a well-rounded, purposeful portfolio.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4 — CLOSING BANNER -->
+    <section class="relative img-placeholder" style="background-image: url('images/closing-building.jpg'); background-size: cover; background-position: center; min-height: 60vh;">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10"></div>
+        <div class="relative z-10 max-w-6xl mx-auto px-8 h-full flex flex-col justify-end pb-16" style="min-height: 60vh;">
+            <h2 class="heading text-4xl md:text-5xl font-bold mb-2">Adobe Capital Partners</h2>
+            <p class="text-lg" style="color:#2D9D6F;">Est 2025</p>
+            <p class="text-lg text-zinc-300">Phoenix, AZ</p>
+        </div>
+    </section>
+
+    <!-- FOOTER — matches team.html / about.html / contact.html exactly -->
     <footer class="py-12 text-center text-sm border-t border-white/10 bg-black">
         Adobe Capital Partners • Phoenix, AZ • <a href="contact.html" class="hover:text-amber-400">Contact Us</a>
     </footer>
-</body>
-</html>    <section class="py-20 bg-zinc-900">
-        <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-3 gap-8">
-            <div class="bg-zinc-800 p-8 rounded-3xl">
-                <h3 class="text-3xl font-semibold mb-6">Energy Solutions</h3>
-                <p>We invest in transformative technologies that advance sustainable energy production and efficiency. Our focus drives long-term environmental and economic impact.</p>
-            </div>
-            <div class="bg-zinc-800 p-8 rounded-3xl">
-                <h3 class="text-3xl font-semibold mb-6">Real Estate</h3>
-                <p>We back transformative solutions that improve patient outcomes and healthcare delivery. Our investments accelerate advancements in medical technology and accessibility.</p>
-            </div>
-            <div class="bg-zinc-800 p-8 rounded-3xl">
-                <h3 class="text-3xl font-semibold mb-6">Military Technology</h3>
-                <p>We support cutting-edge innovations that enhance national security and defense capabilities. Our Portfolio targets high-impact technologies and accessibility.</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section class="py-24 bg-black">
-        <div class="max-w-7xl mx-auto px-8">
-            <h2 class="heading text-6xl font-bold text-center mb-16">About Adobe Capital Partners</h2>
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div class="prose prose-invert text-lg">
-                    <p>Adobe Capital Partners was founded in 2025. ACP is a family office based in Phoenix, Arizona.</p>
-                    <p>At the heart of our mission is a deep commitment to conducting business with an integrity, excellence, and thoroughness, all while conducting our affairs in a manner that reflects our biblical worldview and commitment to serving a higher calling.</p>
-                </div>
-                <div>
-                    <img src="IMG_1142.jpeg" alt="Philosophy" class="rounded-3xl w-full">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Transformative Investments -->
-    <section class="py-24 bg-zinc-900">
-        <div class="max-w-7xl mx-auto px-8">
-            <h2 class="heading text-6xl font-bold text-center mb-16">Transformative Investments</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-zinc-800 p-8 rounded-3xl">
-                    <img src="IMG_1143.jpeg" alt="Post Regime" class="rounded-2xl mb-6 w-full">
-                    <h3 class="text-2xl font-semibold">Post Regime and Infrastructure Reconstruction</h3>
-                    <p>We invest in the rebuilding and modernization of infrastructure in post-regime environments through sustainable smart cities that prioritize resilience and long term viability.</p>
-                </div>
-                <div class="bg-zinc-800 p-8 rounded-3xl">
-                    <img src="IMG_1144.jpeg" alt="Advanced Computing" class="rounded-2xl mb-6 w-full">
-                    <h3 class="text-2xl font-semibold">Advanced Computing</h3>
-                    <p>We invest in cutting-edge advanced computing technologies that drive breakthroughs in performance, efficiency and scalability.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-12 text-center text-sm border-t border-white/10 bg-black">
-        Adobe Capital Partners • Phoenix, AZ • <a href="contact.html" class="hover:text-amber-400">Contact Us</a>
-    </footer>
 </body>
 </html>
