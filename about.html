@@ -9,12 +9,14 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
         body { font-family: 'Inter', system-ui, sans-serif; }
         .heading { font-family: 'Playfair Display', sans-serif; }
+        .img-placeholder { background: linear-gradient(135deg, #18181b 0%, #09090b 100%); }
+        /* images/watch.jpg -> wearable tech photo, same image as homepage teaser (optional) */
     </style>
 </head>
 <body class="bg-zinc-950 text-white">
     <nav class="fixed w-full bg-black/95 backdrop-blur z-50 border-b border-white/10">
         <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
-            <img src="acplogo.jpeg" alt="ACP Logo" class="h-36">
+            <a href="index.html"><img src="acplogo.jpeg" alt="ACP Logo" class="h-36"></a>
             <div class="flex gap-8 text-sm font-medium">
                 <a href="index.html" class="hover:text-amber-400">HOME</a>
                 <a href="about.html" class="hover:text-amber-400">ABOUT</a>
@@ -24,17 +26,71 @@
         </div>
     </nav>
 
-    <div class="pt-24 max-w-5xl mx-auto px-8 py-16">
-        <h1 class="heading text-6xl font-bold mb-12">About Adobe Capital Partners</h1>
-        
-        <div class="prose prose-invert text-lg leading-relaxed mb-20">
-            <p>Adobe Capital Partners was founded in 2025. ACP is a family office based in Phoenix, Arizona.</p>
-            <p>At the heart of our mission is a deep commitment to conducting business with integrity, excellence, and thoroughness, all while conducting our affairs in a manner that reflects our biblical worldview and commitment to serving a higher calling.</p>
-        </div>
+    <!-- ABOUT — full philosophy / diverse industry, mirrors Hostinger layout -->
+    <div class="pt-48 pb-16 px-8">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="heading text-5xl md:text-6xl font-bold mb-16 text-center">About Adobe Capital Partners</h1>
 
-        <h2 class="text-4xl font-semibold mb-12 text-center">Our Leadership Team</h2>
+            <div class="grid md:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="heading text-2xl font-semibold mb-6" style="color:#2D9D6F;">Our Investment Philosophy</h2>
+                    <p class="text-zinc-300 leading-relaxed mb-6">Adobe Capital Partners was founded in 2025. ACP is a family office based in Phoenix, Arizona.</p>
+                    <p class="text-zinc-300 leading-relaxed mb-6">At the heart of our mission is a deep commitment to conducting business with integrity, excellence, and thoroughness, all while conducting our affairs in a manner that reflects our biblical worldview and commitment to serving a higher calling. As diligent stewards of the resources entrusted to us — finances, property, time, relationships — we aim to generate meaningful returns and generously deploy our earnings towards initiatives that create lasting, positive impact in the world rather than accumulating wealth.</p>
+                    <p class="text-zinc-300 leading-relaxed mb-6">We believe our investments should strengthen the communities where we do business, not just our own returns. Wherever we invest — whether in a mining operation, a growing company, or a piece of real estate — we look for opportunities to give back locally: supporting jobs, local partners, and initiatives that help those communities thrive alongside us.</p>
+                    <p class="text-zinc-300 leading-relaxed">Every investment we pursue is carefully evaluated to ensure it aligns with trusted partners, delivers strong financial potential, leverages our unique skills, brings genuine joy, and opens doors for purposeful influence. We intentionally prioritize a well-rounded life, dedicating equal focus to personal and spiritual growth, strategic investing, and transformative outreach — while weaving in fun, meaningful experiences and shared journeys along the way.</p>
+                </div>
+
+                <div>
+                    <h2 class="heading text-2xl font-semibold mb-6" style="color:#2D9D6F;">Diverse Industry</h2>
+                    <p class="text-zinc-300 leading-relaxed mb-8">Adobe Capital Partners invests in a diverse range of high-profile industries, reflecting our commitment to innovation and transformative potential. Our portfolio spans energy startups advancing sustainable solutions, pioneering developments in aerospace, cutting-edge sports wearables that enhance performance and wellness, advanced computing, artificial intelligence, healthcare innovations, and other promising sectors. This broad approach allows us to capture cross-industry synergies, drive meaningful progress, and deliver strong value to stakeholders and the global economy.</p>
+                    <div class="img-placeholder rounded-2xl" style="height: 18rem; background-image: url('images/watch.jpg'); background-size: cover; background-position: center;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LEADERSHIP PREVIEW — unchanged from prior version, links out to full bios on team.html -->
+    <div class="max-w-6xl mx-auto px-8 py-20 border-t border-white/10">
+        <h2 class="heading text-4xl font-semibold mb-12 text-center">Our Team</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-            <!-- Bob -->
+            <div class="text-center">
+                <img src="bob.png" class="rounded-3xl mx-auto mb-4 w-48 h-48 object-cover">
+                <h3 class="font-semibold">Robert (Bob) Smith</h3>
+                <p class="text-amber-400 text-sm">Founder &amp; Principal</p>
+                <a href="team.html" class="text-amber-400 hover:underline text-sm mt-2 inline-block">Full Bio →</a>
+            </div>
+            <div class="text-center">
+                <img src="preston.jpeg" class="rounded-3xl mx-auto mb-4 w-48 h-48 object-cover">
+                <h3 class="font-semibold">Preston Smith</h3>
+                <p class="text-amber-400 text-sm">Chief Investment Officer</p>
+                <a href="team.html" class="text-amber-400 hover:underline text-sm mt-2 inline-block">Full Bio →</a>
+            </div>
+            <div class="text-center">
+                <img src="rich.png" class="rounded-3xl mx-auto mb-4 w-48 h-48 object-cover">
+                <h3 class="font-semibold">Richard Smith</h3>
+                <p class="text-amber-400 text-sm">Principal</p>
+                <a href="team.html" class="text-amber-400 hover:underline text-sm mt-2 inline-block">Full Bio →</a>
+            </div>
+            <div class="text-center">
+                <img src="robin.jpeg" class="rounded-3xl mx-auto mb-4 w-48 h-48 object-cover">
+                <h3 class="font-semibold">Robin Bloomfield</h3>
+                <p class="text-amber-400 text-sm">Director of Operations / Office Manager</p>
+                <a href="team.html" class="text-amber-400 hover:underline text-sm mt-2 inline-block">Full Bio →</a>
+            </div>
+            <div class="text-center">
+                <img src="wendy.jpeg" class="rounded-3xl mx-auto mb-4 w-48 h-48 object-cover">
+                <h3 class="font-semibold">Wendy Smith</h3>
+                <p class="text-amber-400 text-sm">Chief Giving Officer</p>
+                <a href="team.html" class="text-amber-400 hover:underline text-sm mt-2 inline-block">Full Bio →</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-12 text-center text-sm border-t border-white/10 bg-black">
+        Adobe Capital Partners • Phoenix, AZ • <a href="contact.html" class="hover:text-amber-400">Contact Us</a>
+    </footer>
+</body>
+</html>            <!-- Bob -->
             <div class="text-center">
                 <img src="bob.png" class="rounded-3xl mx-auto mb-4 w-48 h-48 object-cover">
                 <h3 class="font-semibold">Robert (Bob) Smith</h3>
