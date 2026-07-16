@@ -13,16 +13,31 @@
 </head>
 <body class="bg-zinc-950 text-white">
     <nav class="fixed w-full bg-black/95 backdrop-blur z-50 border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
-            <img src="acplogo.jpeg" alt="ACP Logo" class="h-36">
-            <div class="flex gap-8 text-sm font-medium">
+        <div class="max-w-7xl mx-auto px-6 md:px-8 py-4 md:py-6 flex justify-between items-center">
+            <img src="acplogo.jpeg" alt="ACP Logo" class="h-16 md:h-36">
+            <div class="hidden md:flex gap-8 text-sm font-medium">
                 <a href="index.html" class="hover:text-amber-400">HOME</a>
                 <a href="about.html" class="hover:text-amber-400">ABOUT</a>
                 <a href="team.html" class="hover:text-amber-400">OUR TEAM</a>
                 <a href="contact.html" class="hover:text-amber-400">CONTACT US</a>
             </div>
+            <button id="menuBtn" class="md:hidden text-white text-3xl leading-none px-2" aria-label="Toggle menu">☰</button>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-black/95 border-t border-white/10 px-6 py-4 space-y-4 text-sm font-medium">
+            <a href="index.html" class="block hover:text-amber-400">HOME</a>
+            <a href="about.html" class="block hover:text-amber-400">ABOUT</a>
+            <a href="team.html" class="block hover:text-amber-400">OUR TEAM</a>
+            <a href="contact.html" class="block hover:text-amber-400">CONTACT US</a>
         </div>
     </nav>
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuBtn.textContent = mobileMenu.classList.contains('hidden') ? '☰' : '✕';
+        });
+    </script>
 
     <div class="pt-24 max-w-6xl mx-auto px-8 py-16">
         <h1 class="heading text-6xl font-bold mb-16 text-center">Our Team</h1>
@@ -91,7 +106,7 @@
     </div>
 
     <footer class="py-12 text-center text-sm border-t border-white/10 bg-black">
-    Adobe Capital Partners • Phoenix, AZ • <a href="contact.html" class="hover:text-amber-400">Contact Us</a>
+    Adobe Capital Partners • Paradise Valley, AZ • <a href="contact.html" class="hover:text-amber-400">Contact Us</a>
     </footer>
 </body>
 </html>
